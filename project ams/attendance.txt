@@ -1,0 +1,119 @@
+from PyQt5.QtWidgets import*
+
+import mysql.connector
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="",
+  database="attendance",
+  port=3307
+)
+
+
+
+In Uidialouge
+
+    classcursor = mydb.cursor()
+            sql="select *from classsec"
+            classcursor.execute(sql)
+            addclass = classcursor.fetchall()
+            print(addclass)
+            for row in addclass:
+                    self.classsection.addItem(str(row[0]))
+            classcursor.close()
+
+    self.selectclass.clicked.connect(self.studentdetails)
+
+     # sub=    [('satwik',21,'garia'),('rem',19,'bel')]
+
+        # row=0
+        # for i in sub:
+        #         print(i)
+        #         for f in i:
+        #                 print(f)
+        #                 self.classtable.setItem(row,0,QtWidgets.QTableWidgetItem(f))
+        #         row+=1   
+
+
+    
+
+
+
+    def function
+
+     def studentdetails(self):
+            if self.classsection.currentText()=='Select Students':
+                msg=QMessageBox()
+                msg.setText("Please select class")
+                msg.setWindowTitle("show error")
+                msg.setIcon(QMessageBox.Information)
+                msg.setStandardButtons(QMessageBox.Ok)
+                retval=msg.exec_()
+            else:
+                    pass
+
+            con=mydb.cursor()
+            sql=f'select*from {self.classsection.currentText()}'
+            con.execute(sql)
+            detail=con.fetchall()
+            
+            print(detail)
+        #     for i in detail:
+        #             print(i)
+        #             column=0
+        #             for f in i:
+        #                     print(f)
+        #                     self.classtable.setItem(row,column,QtWidgets.QTableWidget)
+        #                     column+=1
+        #             row+=1   
+
+        #     sub=    [('satwik',21,'garia'),('rem',19,'bel')]
+        #     row=0
+        #     for i in sub:
+        #             self.classtable.setItem(row,0,QtWidgets.QTableWidgetItem(i))
+        #             row+=1
+
+
+
+
+ sub=    [('satwik',21,'garia'),('rem',19,'bel')]
+
+        rowline=0
+        self.classtable.setRowCount(len(sub))
+
+        for i in sub:
+            self.classtable.setItem(rowline, 0, QtWidgets.QTableWidgetItem(i[0]))
+            self.classtable.setItem(rowline, 1, QtWidgets.QTableWidgetItem(str(i[1])))
+            self.classtable.setItem(rowline, 2, QtWidgets.QTableWidgetItem(i[2]))
+            rowline=rowline+1     
+
+
+
+            executed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
